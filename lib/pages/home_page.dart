@@ -12,12 +12,11 @@ import '../widgets/language.dart';
 class HomePage extends StatelessWidget {
   static const String id = "HomePage";
 
-
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    SetLanguage lang  =Get.put(SetLanguage());
+    SetLanguage lang = Get.put(SetLanguage());
     return Scaffold(
       body: Stack(
         children: [
@@ -53,25 +52,43 @@ class HomePage extends StatelessWidget {
               Column(
                 children: [
                   GestureDetector(
-                    child:  MakeBox(text:languageMap[lang.currentLanguage]![ "So'z qidirish"]!),
+                    child:
+                        //Obx(()=>  MakeBox(text:languageMap[lang.currentLanguage]![ "So'z qidirish"]!)),
+                        MakeBox(
+                            text:
+
+                            languageMap[lang.currentLanguage.value]![
+                                "So'z qidirish"]!),
                     onTap: () {
                       Navigator.pushNamed(context, SearchPage.id);
                     },
                   ),
                   GestureDetector(
-                    child:  MakeBox(text: languageMap[lang.currentLanguage]!["So'z qo'shish"]!),
+                    child:
+                        // Obx(()=>  MakeBox(text: languageMap[lang.currentLanguage]!["So'z qo'shish"]!)),
+                        MakeBox(
+                            text: languageMap[lang.currentLanguage.value]![
+                                "So'z qo'shish"]!),
                     onTap: () {
                       Navigator.pushNamed(context, AddPage.id);
                     },
                   ),
                   GestureDetector(
-                    child:  MakeBox(text:languageMap[lang.currentLanguage] !["So'z o'chirish"]!),
+                    child:
+                        //Obx(()=>  MakeBox(text:languageMap[lang.currentLanguage] !["So'z o'chirish"]!)),
+                        MakeBox(
+                            text: languageMap[lang.currentLanguage.value]![
+                                "So'z o'chirish"]!),
                     onTap: () {
                       Navigator.pushNamed(context, DeletePage.id);
                     },
                   ),
                   GestureDetector(
-                    child:  MakeBox(text:languageMap[lang.currentLanguage]! ["Til tanlash"]!),
+                    child:
+                        // Obx(()=> MakeBox(text:languageMap[lang.currentLanguage]! ["Til tanlash"]!)),
+                        MakeBox(
+                            text: languageMap[lang.currentLanguage.value]![
+                                "Til tanlash"]!),
                     onTap: () {
                       Navigator.pushNamed(context, IntroPage.id);
                     },

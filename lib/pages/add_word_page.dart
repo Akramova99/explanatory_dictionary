@@ -81,12 +81,12 @@ class _AddPageState extends State<AddPage> {
                     ),
                     child: Column(
                       children: [
-                        Text(
-                          languageMap[lang.currentLanguage]!["Atama"]!,
+                        Obx(()=>Text(
+                          languageMap[lang.currentLanguage.value]!["Atama"]!,
                           style: TextStyle(
                             fontSize: 18,
                           ),
-                        ),
+                        )),
                         Container(
                           margin: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 5),
@@ -98,19 +98,20 @@ class _AddPageState extends State<AddPage> {
                           ),
                           child: Padding(
                             padding: const EdgeInsets.only(left: 8.0),
-                            child: TextField(
+                            child:
+                            Obx(()=>TextField(
                               controller: wordController,
                               decoration:  InputDecoration(
                                 border: InputBorder.none,
-                                hintText:languageMap[lang.currentLanguage]! ['Kiriting']!,
+                                hintText:languageMap[lang.currentLanguage.value]! ['Kiriting']!,
                               ),
-                            ),
+                            )),
                           ),
                         ),
-                         Text(
-                          languageMap[lang.currentLanguage]! ['Tasnifi']!,
-                          style: TextStyle(fontSize: 18),
-                        ),
+                         Obx(()=>Text(
+                           languageMap[lang.currentLanguage.value]! ['Tasnifi']!,
+                           style: TextStyle(fontSize: 18),
+                         )),
                         Container(
                           margin: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 5),
@@ -122,17 +123,18 @@ class _AddPageState extends State<AddPage> {
                           ),
                           child: Padding(
                             padding: const EdgeInsets.only(left: 8.0),
-                            child: TextField(
+                            child:
+                            Obx(()=>TextField(
                               controller: classificationController,
                               decoration:  InputDecoration(
                                 border: InputBorder.none,
-                                hintText:languageMap[lang.currentLanguage]! ['Kiriting']!,
+                                hintText:languageMap[lang.currentLanguage.value]! ['Kiriting']!,
                               ),
-                            ),
+                            )),
                           ),
                         ),
                         GestureDetector(
-                          child:  MakeBox(text:languageMap[lang.currentLanguage]! ["Qo'shish"]! ),
+                          child: Obx(()=> MakeBox(text:languageMap[lang.currentLanguage.value]! ["Qo'shish"]! )),
                           onTap: () {
                             Logger().i(MediaQuery.of(context).size.width);
                             Logger().i(280 / MediaQuery.of(context).size.width);

@@ -79,20 +79,21 @@ class _SearchPageState extends State<SearchPage> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.only(left: 8.0),
-                      child: TextField(
-                        controller: searchController,
-                        decoration: InputDecoration(
-                          suffixIcon: IconButton(
-                              onPressed: () {
-                                db.getInfo(
-                                    wordKey: searchController.text.trim());
-                              },
-                              icon: const Icon(Icons.search)),
-                          border: InputBorder.none,
-                          hintText: languageMap[lang.currentLanguage.value]![
-                              'Qidiruv'],
-                        ),
+                      child:
+                    Obx(()=>  TextField(
+                      controller: searchController,
+                      decoration: InputDecoration(
+                        suffixIcon: IconButton(
+                            onPressed: () {
+                              db.getInfo(
+                                  wordKey: searchController.text.trim());
+                            },
+                            icon: const Icon(Icons.search)),
+                        border: InputBorder.none,
+                        hintText: languageMap[lang.currentLanguage.value]![
+                        'Qidiruv'],
                       ),
+                    ),)
                     ),
                   ),
                   ///////////////////////////////////////////////////////searchController.text!=""?

@@ -2,8 +2,10 @@ import 'package:explanatory_dictionary/pages/add_word_page.dart';
 import 'package:explanatory_dictionary/pages/delete_page.dart';
 import 'package:explanatory_dictionary/pages/home_page.dart';
 import 'package:explanatory_dictionary/pages/intro_page.dart';
+import 'package:explanatory_dictionary/pages/admin_page.dart';
 import 'package:explanatory_dictionary/pages/search_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async{
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

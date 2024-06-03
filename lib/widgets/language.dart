@@ -16,7 +16,8 @@ final languageMap = {
     "Ushbu bo'limdan faqat adminstratorlar foydalana oladi!":
         "Ushbu bo'limdan faqat adminstratorlar foydalana oladi!",
     "Parolni kiriting": "Parolni kiriting",
-    "Qidiruv": "Qidiruv"
+    "Qidiruv": "Qidiruv",
+    "Ortga": "Ortga"
   },
   'en': {
     "So'z qidirish": "word search",
@@ -32,7 +33,7 @@ final languageMap = {
     "Muvaffaqiyatli o'chirildi": "successfully deleted",
     "Ushbu bo'limdan faqat adminstratorlar foydalana oladi!":
         "Only administrators can use this section!",
-    "Parolni kiriting": "enter password",
+    "Parolni kiriting": "Enter the password",
     "Ortga": "Back",
     "Qidiruv": "Search",
   },
@@ -46,7 +47,7 @@ final languageMap = {
     'Kiriting': 'Введите',
     "Tasnifi": "Классификация",
     "Qo'shish": "Вставить",
-    "Muvaffaqiyatli saqlandi": "Успешно удалено",
+    "Muvaffaqiyatli saqlandi": "Успешно сохранено",
     "Muvaffaqiyatli o'chirildi": "Успешно удалено",
     "Ushbu bo'limdan faqat adminstratorlar foydalana oladi!":
         "Только администраторы могут использовать этот раздел!",

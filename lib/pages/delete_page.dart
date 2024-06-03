@@ -1,4 +1,5 @@
 import 'package:explanatory_dictionary/controller/set_language.dart';
+import 'package:explanatory_dictionary/pages/admin_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -85,33 +86,39 @@ class _DeletePageState extends State<DeletePage> {
   }
 
   Widget delete(int index) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-      constraints: GetPlatform.isAndroid
-          ? const BoxConstraints(maxWidth: 280.0)
-          : const BoxConstraints(maxWidth: 400.0),
-      // Set a maximum width
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      decoration: BoxDecoration(
-        color: Colors.grey,
-        borderRadius: BorderRadius.circular(15.0),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Column(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+          constraints:const BoxConstraints(maxWidth: 260.0),
+
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          decoration: BoxDecoration(
+            color: Colors.grey,
+            borderRadius: BorderRadius.circular(15.0),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Obx(() => Text("${languageMap[lang.currentLanguage.value]!["Atama"]!} : ${db.listKeys[index]}")),
-              Obx(() => Text("${languageMap[lang.currentLanguage.value]!["Tasnifi"]!}: ${db.listKeys[index]}")),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Obx(() => Text(
+                      "${languageMap[lang.currentLanguage.value]!["Atama"]!} : ${db.listKeys[index]}")),
+                  Obx(() => Text(
+                      "${languageMap[lang.currentLanguage.value]!["Tasnifi"]!}: ${db.listKeys[index]}")),
+                ],
+              ),
+              IconButton(
+                  onPressed: () {
+                    Get.to(AdminPage(index: index));
+                  },
+                  icon: const Icon(Icons.delete))
             ],
           ),
-          IconButton(
-              onPressed: () {
-                db.deleteInfo(wordKey: db.listKeys[index]);
-              },
-              icon: const Icon(Icons.delete))
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
